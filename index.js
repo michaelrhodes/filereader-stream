@@ -29,7 +29,7 @@ FileStream.prototype._FileReader = function() {
   reader.onloadend = function loaded(event) {
     var data = event.target.result      
     if (data instanceof ArrayBuffer)
-      data = new Buffer(new Uint8Array(event.target.result))
+      data = new Uint8Array(event.target.result)
     self.dest.write(data)        
     if (self.offset < self._file.size) {
       self.emit('progress', self.offset)
