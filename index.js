@@ -1,5 +1,4 @@
-var inherits = require('inherits')
-var EventEmitter = require('events').EventEmitter
+var emitter = require('emitter-component')
 
 module.exports = FileStream
 
@@ -92,4 +91,4 @@ FileStream.prototype.abort = function() {
   return this.offset
 }
 
-inherits(FileStream, EventEmitter)
+emitter(FileStream.prototype)
